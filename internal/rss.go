@@ -65,7 +65,7 @@ func (r *RSS) Update() {
 	for _, f := range r.c.conf.Feeds {
 		feed, err := r.FetchURL(fp, f)
 		if err != nil {
-			log.Printf("error fetching url: %s, err: %v", f, err)
+			fmt.Errorf("error fetching url: %s, err: %v", f, err)
 			continue
 		}
 		r.feeds = append(r.feeds, feed)
